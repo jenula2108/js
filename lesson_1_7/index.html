@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_1_7</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          Задача 6. З клавіатури вводяться вартість товару та кількість одиниць
+          3 товарів. Обчислити вартість кожного товару окремо та загальну
+          вартість. Вивести чек (як у супермаркеті) використовуючи елементи
+          розмітки.
+        </h2>
+        <script>
+          let numberWindow = parseInt(prompt("введіть кількість вікон "));
+          let windowPrice = parseFloat(prompt("введіть ціну за одне вікно "));
+          let numberShelf = parseInt(prompt("введіть кількість поличьок "));
+          let shelfPrice = parseFloat(prompt("введіть ціну за одну поличку "));
+          let numberDoor = parseInt(prompt("введіть кількість дверей "));
+          let doorPrice = parseFloat(prompt("введіть ціну за одну дверь "));
+          let totalPriceWin = numberWindow * windowPrice;
+          let totalPriceSh = numberShelf * shelfPrice;
+          let totalPriceDoor = numberDoor * doorPrice;
+          let totalPrice = totalPriceDoor + totalPriceSh + totalPriceWin;
+          document.write(
+            `   <br><br>     <ul>
+          <li>вікно ціна за одну одиницю...${windowPrice}грв.
+            </li>
+          <li>кількість одиниць товару.....${numberWindow}шт.</li>
+          <li>загальна ціна за товар ......${totalPriceWin}грв</li>
+        </ul>
+        <br>
+        <ul>
+          <li>поличка ціна за одну одиницю....${shelfPrice}грв.</li>
+          <li>кількість одиниць товару........${numberShelf}шт.</li>
+          <li>загальна ціна за товар..........${totalPriceSh}грв.</li>
+        </ul>
+        <br>
+        <ul>
+          <li>двері ціна за одну одиницю....${doorPrice}грв.</li>
+          <li>кількість одиниць товару........${numberDoor}шт.</li>
+          <li>загальна ціна за товар..........${totalPriceDoor}грв.</li>
+        </ul>
+        <br>
+        <ul>
+          <li>загалом до сплати...........${totalPrice}грв.</li>
+        </ul>`
+          );
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

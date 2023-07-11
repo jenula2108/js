@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_1_1</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          Задача 1. Знайти суму, добуток та частку двох дійсних чисел. Результат
+          вивести у формі таблиці
+        </h2>
+        <script>
+          let a = parseFloat(prompt("ввведите значение a"));
+          let b = parseFloat(prompt("ввведите значение b"));
+          let calkS1 = a + b;
+          let calkS2 = a * b;
+          let calkS3 = a / b;
+          document.write(
+            `<table>
+          <tr>
+            <th>дiя</th>
+            <th>результат</th>
+          </tr>
+          <tr>
+            <td>додавання</td>
+            <td>${calkS1}</td>
+          </tr>
+          <tr>
+            <td>множення</td>
+            <td>${calkS2}</td>
+          </tr>
+          <tr>
+            <td>дiленя</td>
+            <td>${calkS3}</td>
+          </tr>
+        </table>`
+          );
+        </script>
+        <!-- <table>
+          <tr>
+            <th>дiя</th>
+            <th>результат</th>
+          </tr>
+          <tr>
+            <td>додавання</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>множення</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>дiленя</td>
+            <td></td>
+          </tr>
+        </table> -->
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

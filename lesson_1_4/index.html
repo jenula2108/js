@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_1_4</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          Задача 3. Дано вартість одиниці товару і кількість. Знайти загальну
+          вартість та ПДВ (5% від загальної вартості).
+        </h2>
+        <script>
+          let quantity = parseInt(prompt("введiть кiлькiсть товару"));
+          let price = parseFloat(prompt("введiть цiну товару"));
+          let totalAmount = quantity * price;
+          let tax = totalAmount * 0.05;
+          document.write(
+            `<table>
+          <tr>
+            <th>загальна вартiсть товару</th>
+            <th>ПДВ</th>
+          </tr>
+          <tr>
+            <td>${totalAmount}</td>
+            <td>${tax}</td>
+          </tr>
+        </table>`
+          );
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

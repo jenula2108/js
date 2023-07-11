@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_1_5</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          Задача 4. Дано довжину у сантиметрах. Визначати скільки це метрів і
+          кілометрів.
+        </h2>
+        <script>
+          let length = parseFloat(prompt("введiть довжину в сантиметрах"));
+          let lengthM = length / 100;
+          let lengthKm = length / 1000;
+
+          document.write(
+            `<table>
+          <tr>
+            <th>довжина в сантиметрах</th>
+            <th>довжина в метрах</th>
+            <th>довжина в кiлометрах</th>
+          </tr>
+          <tr>
+            <td>${length}см</td>
+            <td>${lengthM}м</td>
+            <td>${lengthKm}км</td>
+          </tr>
+        </table>`
+          );
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_1_6</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          Задача 5. Дано кількість секунд, що пройшла від початку доби.
+          Визначити скільки це годин і хвилин.
+        </h2>
+        <script>
+          let numberSec = parseInt(prompt("введiть кiлькiсть секунд"));
+          let numberMin = numberSec / 60;
+          let numberHour = numberSec / 3600;
+
+          document.write(
+            `<table>
+          <tr>
+            <th>час в секундах</th>
+            <th>час в хвилинах</th>
+            <th>час в годинах</th>
+          </tr>
+          <tr>
+            <td>${numberSec}</td>
+            <td>${numberMin.toFixed(1)}</td>
+            <td>${numberHour.toFixed(1)}</td>
+          </tr>
+        </table>`
+          );
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
