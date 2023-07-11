@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_1_1</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>Задача 0. Обчислити значення виразів</h2>
+        <br />
+        <br />
+        <ul>
+          <li><img src="img/01.png" alt="" /></li>
+          <li><img src="img/02.png" alt="" /></li>
+          <li><img src="img/03.png" alt="" /></li>
+          <li><img src="img/04.png" alt="" /></li>
+        </ul>
+        <br />
+        <br />
+        <script>
+          let a = parseFloat(prompt("ввведите значение a"));
+          let b = parseFloat(prompt("ввведите значение b"));
+          let c = parseFloat(prompt("ввведите значение c"));
+          let calkS1 = a + 12 + b;
+          let calkS2 = Math.sqrt(((a + b) / 2) * a);
+          let calkS3 = Math.cbrt((a + b) / c);
+          let calkS4 = Math.sin(a / -b);
+          document.write(
+            `результат виразу S1 дорiвнюе ${calkS1.toFixed(2)}<br><br>`
+          );
+          document.write(
+            `результат виразу S2 дорiвнюе ${calkS2.toFixed(2)}<br><br>`
+          );
+          document.write(
+            `результат виразу S3 дорiвнюе ${calkS3.toFixed(2)}<br><br>`
+          );
+          document.write(
+            `результат виразу S4 дорiвнюе ${calkS4.toFixed(2)}<br><br>`
+          );
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
