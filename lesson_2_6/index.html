@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_2_6</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.
+        </h2>
+        <script>
+          let numDay = parseInt(prompt(`введіть номер дня тижня`));
+          let dayName;
+          switch (numDay) {
+            case 1:
+              dayName = `понеділок`;
+              break;
+            case 2:
+              dayName = `вівторок`;
+              break;
+            case 3:
+              dayName = `середа`;
+              break;
+            case 4:
+              dayName = `четверг`;
+              break;
+            case 5:
+              dayName = `пятниця`;
+              break;
+            case 6:
+              dayName = `субота`;
+              break;
+            case 7:
+              dayName = `неділя`;
+              break;
+            default:
+              dayName = `нема такого дня`;
+              break;
+          }
+          alert(dayName);
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

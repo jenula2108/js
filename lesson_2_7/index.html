@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_2_6</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          З клавіатури вводиться номер місяця. Вивести до якої пори він
+          відноситься
+        </h2>
+        <script>
+          let numManth = parseInt(prompt(`введіть номер місяця`));
+          let timeOfTheYear;
+          if (numManth <= 2 || numManth === 12) {
+            timeOfTheYear = `зима`;
+          } else if (numManth > 2 && numManth <= 5) {
+            timeOfTheYear = `весна`;
+          } else if (numManth >= 6 && numManth <= 8) {
+            timeOfTheYear = `літо`;
+          } else {
+            timeOfTheYear = `осінь`;
+          }
+          alert(timeOfTheYear);
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

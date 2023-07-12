@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_2_4</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною
+          у садочку, школярем, студентом, працівником, пенсіонером)
+        </h2>
+        <script>
+          let manAge = parseInt(prompt(`введіть вік людини`));
+          let whoIsThisPerson;
+          if (manAge <= 6) {
+            whoIsThisPerson = `дитина у садочку`;
+          } else if (manAge <= 16) {
+            whoIsThisPerson = `школяр`;
+          } else if (manAge <= 21) {
+            whoIsThisPerson = `студент`;
+          } else if (manAge <= 58) {
+            whoIsThisPerson = `працівник`;
+          } else whoIsThisPerson = `пенсіонер`;
+          alert(whoIsThisPerson);
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

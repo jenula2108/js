@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_2_1</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          З клавіатури вводяться імена двох дітей та кількість у них цукерок.
+          Вивести не екран ім’я тієї дитини, у якої кількість цукерок є більшою,
+          або вивести, що кількість однакова.
+        </h2>
+
+        <script>
+          let nameChildOne = prompt(`введіть ім'я першої дитини`);
+          let numCandOneChild = parseInt(
+            prompt(`кількість цюкерок у першої дитини`)
+          );
+          let nameChildTwo = prompt(`введіть ім'я другої дитини`);
+          let numCandYwoChild = parseInt(
+            prompt(`кількість цюкерок у другої дитини`)
+          );
+          let moreCandChild;
+          if (numCandOneChild > numCandYwoChild) {
+            moreCandChild = nameChildOne;
+          } else if (numCandOneChild < numCandYwoChild) {
+            moreCandChild = nameChildTwo;
+          } else {
+            moreCandChild = `кількість цюкерок однакова`;
+          }
+          alert(moreCandChild);
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

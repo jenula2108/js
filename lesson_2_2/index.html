@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_2_2</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не
+          вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші,
+          то пропонуємо купити лотерею за 4 грн.
+        </h2>
+        <script>
+          let productPrice = parseFloat(prompt(`введіть ціну за товар`));
+          let amountMoney = parseFloat(prompt(`введіть кількість грошей`));
+          let resultPurchase;
+          if (productPrice > amountMoney) {
+            resultPurchase = `у вас не вистачае грошей`;
+          } else if (amountMoney - productPrice >= 4) {
+            resultPurchase = `пропонуємо купити лотерею за 4 грн.`;
+          } else {
+            resultPurchase = `дякую за покупку`;
+          }
+
+          alert(resultPurchase);
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

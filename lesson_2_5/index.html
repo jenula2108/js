@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_2_5</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий
+          автомобіль, С-вантажний автомобіль). Вивести на екран назву
+          транспортного засобу, яким він може керувати.
+        </h2>
+        <script>
+          let category = prompt(`назва категорії водія`);
+          let typeOfVehicle;
+          if (category == "A") {
+            typeOfVehicle = `мотоцикл`;
+          } else if (category == "B") {
+            typeOfVehicle = `легковий автомобіль`;
+          } else if (category == "C") {
+            typeOfVehicle = `вантажний автомобіль`;
+          } else typeOfVehicle = `пешохід`;
+          alert(typeOfVehicle);
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
