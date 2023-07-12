@@ -26,9 +26,9 @@
             timeOfTheYear = `весна`;
           } else if (numManth >= 6 && numManth <= 8) {
             timeOfTheYear = `літо`;
-          } else {
+          } else if (numManth >= 9 && numManth <= 11) {
             timeOfTheYear = `осінь`;
-          }
+          } else timeOfTheYear = `не має такого місяця`;
           alert(timeOfTheYear);
         </script>
       </main>
