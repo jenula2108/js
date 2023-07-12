@@ -1,0 +1,82 @@
+@use "sass:math";
+@import "_comonns.scss";
+@import "_fonts.scss";
+@import "_reset.scss";
+@import "_mixins.scss";
+
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+// @media (any-hover: hover){
+// 	&:hover{
+
+// 	}
+// }
+
+body {
+  font-family: "Poppins";
+}
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
+}
+[class*="__container"] {
+  max-width: rem(1270);
+  margin: 0 auto;
+  padding: 0 rem(15);
+}
+h1 {
+  text-align: center;
+  padding: rem(30) 0;
+  min-width: rem(600);
+  margin: rem(15) auto;
+  text-transform: uppercase;
+  background-color: rgb(73, 87, 109);
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+}
+.header a {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  max-width: 150px;
+  padding: 10px 20px;
+  background-color: rgb(194, 90, 38);
+  border-radius: 8px;
+  color: aliceblue;
+  transition: all 0.2s;
+}
+.header a:hover {
+  transform: scale(1.03);
+}
+
+.link {
+  display: block;
+  text-align: center;
+  padding: rem(30) rem(10);
+  min-width: rem(400);
+  margin: rem(15) auto;
+  text-transform: uppercase;
+  background-color: rgb(18, 50, 102);
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.link:hover {
+  transform: scale(1.02);
+}
+.link:active {
+  transform: scale(1);
+}
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    196deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(12, 177, 230, 1) 46%,
+    rgba(245, 255, 0, 1) 72%
+  );
+}

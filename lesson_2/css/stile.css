@@ -1,0 +1,286 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+.burger__content {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  position: relative;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.burger__content:hover {
+  border-top: none;
+  border-bottom: none;
+}
+
+.burger__content::after,
+.burger__content::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  border: 1px solid #000;
+  transition: all 0.2s;
+}
+
+.burger__content:hover:before {
+  transform: rotate(45deg);
+}
+
+.burger__content:hover:after {
+  transform: rotate(-45deg);
+}
+
+/* -----------stars-rating----CSS-------- */
+.simple-rating {
+  position: relative;
+  font-size: 40px;
+  display: inline-block;
+  color: rgb(202, 217, 230);
+}
+
+.simple-rating::before {
+  content: "★★★★★";
+  display: block;
+}
+
+.simple-rating__items {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+
+.simple-rating__item {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+}
+
+.simple-rating__label {
+  font: 0 0 20%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.simple-rating__label::before {
+  content: "★";
+  display: block;
+  transition: color 0.3;
+}
+
+.simple-rating__item:checked,
+.simple-rating__item:checked ~ .simple-rating__label {
+  color: gold;
+}
+
+.simple-rating__label:hover:hover,
+.simple-rating__label:hover:hover ~ .simple-rating__label,
+.simple-rating__label:checked ~ .simple-rating__label:hover {
+  color: gold;
+}
+
+.lesson__link {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.lesson__page {
+  padding: 8px 30px;
+  border: 1px solid #3056D3;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: 0.3s;
+  align-self: center;
+}
+
+.lesson__page:hover {
+  background-color: #3056D3;
+  color: wheat;
+}
+
+.lesson__page:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 420px) {
+  .lesson__link {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.checkbox__item {
+  position: relative;
+}
+
+.checkbox__item:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.checkbox__input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.checkbox__label::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 0.7px solid #E7E7E7;
+  border-radius: 4px;
+}
+
+.checkbox__input:checked + .checkbox__label::before {
+  background: url(../img/On.svg) 100% 100%/cover no-repeat;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+}
+
+textarea,
+button,
+input {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+body {
+  font-family: "Poppins";
+}
+
+.wrapper {
+  overflow: clip;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+[class*=__container] {
+  max-width: 79.375rem;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+h1 {
+  text-align: center;
+  padding: 1.875rem 0;
+  min-width: 37.5rem;
+  margin: 0.9375rem auto;
+  text-transform: uppercase;
+  background-color: rgb(73, 87, 109);
+  color: rgb(255, 255, 255);
+  border-radius: 3px;
+}
+
+.header a {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  max-width: 150px;
+  padding: 10px 20px;
+  background-color: rgb(194, 90, 38);
+  border-radius: 8px;
+  color: aliceblue;
+  transition: all 0.2s;
+}
+
+.header a:hover {
+  transform: scale(1.03);
+}
+
+.link {
+  display: block;
+  text-align: center;
+  padding: 1.875rem 0.625rem;
+  min-width: 25rem;
+  margin: 0.9375rem auto;
+  text-transform: uppercase;
+  background-color: rgb(18, 50, 102);
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.link:hover {
+  transform: scale(1.02);
+}
+
+.link:active {
+  transform: scale(1);
+}
+
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(196deg, rgb(2, 0, 36) 0%, rgb(12, 177, 230) 46%, rgb(245, 255, 0) 72%);
+}
