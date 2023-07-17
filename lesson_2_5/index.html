@@ -21,14 +21,23 @@
         <script>
           let category = prompt(`назва категорії водія`);
           let typeOfVehicle;
-          if (category == "A") {
-            typeOfVehicle = `мотоцикл`;
-          } else if (category == "B") {
-            typeOfVehicle = `легковий автомобіль`;
-          } else if (category == "C") {
-            typeOfVehicle = `вантажний автомобіль`;
-          } else typeOfVehicle = `пешохід`;
-          alert(typeOfVehicle);
+          switch (category) {
+            case "a":
+            case "A":
+              category = "мотоцикл";
+              break;
+            case "b":
+            case "B":
+              category = "легковий автомобіль";
+              break;
+            case "c":
+            case "C":
+              category = "вантажний автомобіль";
+              break;
+            default:
+              category = "пешохід";
+          }
+          alert(category);
         </script>
       </main>
       <footer class="footer"></footer>
