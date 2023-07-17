@@ -20,18 +20,23 @@
         <script>
           let minNum = 1;
           let maxNum = 5;
-          let a = parseInt(prompt(`перша спроба`));
-          let b = parseInt(prompt(`друга спроба`));
           let randomNum =
             minNum + Math.floor(Math.random() * (maxNum - minNum + 1));
-          let result;
           alert(`випадкове число ${randomNum}`);
+          let a = parseInt(prompt(`перша спроба`));
+          let result;
           if (a === randomNum) {
             result = `ви вгадали число`;
-          } else if (b === randomNum) {
-            result = `ви вгадали число`;
-          } else result = `ви не вгадали число`;
-          alert(result);
+            alert(result);
+          } else {
+            result = `ви не вгадали число`;
+            alert(result);
+            a = parseInt(prompt(`друга спроба`));
+            if (a === randomNum) {
+              result = `ви вгадали число`;
+            } else result = `ви не вгадали число`;
+            alert(result);
+          }
         </script>
       </main>
       <footer class="footer"></footer>
