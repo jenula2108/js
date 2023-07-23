@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>13. Морський бій.Комп’ютер випадково розташовує одиночний корабель на полі розміром N * M.Маючи К снарядів
+        користувач намагається потопити корабель.</h2>
+      <script>
+        let columnM = parseInt(prompt("введіть кількість колонок поля"));
+        let shellNum = parseInt(prompt("введіть кількість снарядів"));
+        let numFild = 0;
+        document.write(`<table>`);
+        for (let i = 1; i <= rowN; i++) {
+          document.write(`<tr>`);
+          for (let a = 1; a <= columnM; a++) {
+            numFild++;
+            document.write(`<td>${numFild}</td>`);
+          }
+          document.write(`</tr>`);
+        }
+        document.write(`</table>`);
+        confirm(`кількість полів дорівнюе ${numFild}`);
+        let shipTarget = 1 + Math.floor(Math.random() * numFild);
+        let userFire;
+        let fildFinish = (shipTarget + 1) % columnM === 1
+        for (let q = 1; q <= shellNum; q++) {
+          userFire = parseInt(prompt("виберіть ціль"));
+          if (userFire > numFild) {
+            confirm("ціль вказано не вірно,спробуйте ще раз");
+            userFire = parseInt(prompt("виберіть ціль"));
+          }
+          if (userFire === shipTarget) {
+            confirm("ви попали в ціль");
+            break;
+          }
+          if (
+            userFire === shipTarget + 1 &&
+            fildFinish != true ||
+            userFire === shipTarget - 1 ||
+            userFire === shipTarget - columnM ||
+            userFire === shipTarget + columnM
+          ) {
+            confirm("ви поранели корабель");
+          } else confirm("ви не попали в ціль");
+        }
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>
