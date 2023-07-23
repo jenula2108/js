@@ -18,7 +18,7 @@
         confirm).</h2>
       <script>
         let userNum = parseInt(prompt("введіть число від одного до 10"));
-        for (let i = 0; i <= 3; i++) {
+        for (let i = 0; i < 3; i++) {
           let randomCompNum = 1 + Math.floor(Math.random() * 10);
           confirm(`комп'ютер вибрав число ${randomCompNum}`);
           if (userNum === randomCompNum) {
