@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- &display=swap -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/stile.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson_lesson</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main__container">
+        <h2>
+          Задача 12. Ігровий автомат. Випадково вибираємо зображення у 3
+          позиціях. Вибір у кожній позиції вибирається як одне з чотирьох
+          зображень. Вивести ці зображення і повідомити виграш користувача (три
+          перших зображення 100 грн, три других – 200, три третіх – 500, три
+          четвертих зображення – 1000грн). Використати цикли і switch (для
+          вибору зображення за номером).
+        </h2>
+        <script>
+          let randomFruct,
+            fruct1 = 0,
+            fruct2 = 0,
+            fruct3 = 0,
+            fruct4 = 0;
+          for (let i = 1; i <= 3; i++) {
+            randomFruct = 1 + Math.floor(Math.random() * 4);
+            switch (randomFruct) {
+              case 1:
+                document.write(`<img src="img/fruct_1.png" alt="">`);
+                fruct1++;
+                break;
+              case 2:
+                document.write(`<img src="img/fruct_2.png" alt="">`);
+                fruct2++;
+                break;
+              case 3:
+                document.write(`<img src="img/fruct_3.png" alt="">`);
+                fruct3++;
+                break;
+              case 4:
+                document.write(`<img src="img/fruct_4.png" alt="">`);
+                fruct4++;
+              default:
+                break;
+            }
+          }
+          if (fruct1 === 3) {
+            document.write(`<br> <div class="win">ви виграли 100грв</div>`);
+          }
+          if (fruct2 === 3) {
+            document.write(`<br> <div class="win">ви виграли 200грв</div>`);
+          }
+          if (fruct3 === 3) {
+            document.write(`<br> <div class="win">ви виграли 500грв</div>`);
+          }
+          if (fruct4 === 3) {
+            document.write(`<br> <div class="win">ви виграли 1000грв</div>`);
+          }
+        </script>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
