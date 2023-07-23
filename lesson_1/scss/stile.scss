@@ -31,7 +31,6 @@ main {
 h1 {
   text-align: center;
   padding: rem(30) 0;
-  min-width: rem(600);
   margin: rem(15) auto;
   text-transform: uppercase;
   background-color: rgb(73, 87, 109);
@@ -56,8 +55,8 @@ h1 {
 .link {
   display: block;
   text-align: center;
-  padding: rem(30) 0;
-  min-width: rem(400);
+  padding: rem(30) rem(10);
+
   margin: rem(15) auto;
   text-transform: uppercase;
   background-color: rgb(18, 50, 102);
