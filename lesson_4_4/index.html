@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>3. Дано ціле число N. Вивести ті натуральні числа, квадрати яких є меншими або рівними за N
+      </h2>
+      <script>
+
+        let numN = parseInt(prompt("введіть ціле число"));
+        for (let rezult = 0; numN >= Math.pow(rezult, 2); rezult++) {
+          document.write(`${rezult}`);
+        }
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>

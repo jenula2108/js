@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>11.1. Вивести на екран усі трицифрові числа, у яких перша цифра є більшою або рівною за суму другої і третьої.
+      </h2>
+      <script>
+        let firstNum,
+          secondNum,
+          thirdNum;
+        for (let firstNum = 1; firstNum <= 9; firstNum++) {
+          for (let secondNum = 0, thirdNum = 0; secondNum + thirdNum <= firstNum; secondNum++, thirdNum++) {
+            document.write(`${firstNum}${secondNum}${thirdNum} <br>`);
+          }
+        }
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>
