@@ -17,9 +17,9 @@
       <h2>Задача 2. Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.</h2>
       <script>
         function dayWeek(numDay) {
-          if (numDay <= 5)
+          if (numDay <= 5 && numDay > 0)
             confirm("робочий день")
-          else if (numDay <= 7)
+          else if (numDay <= 7 && numDay > 0)
             confirm("вихідний")
           else
             confirm("не вірно вказаний номер дня")
