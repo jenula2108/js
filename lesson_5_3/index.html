@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>Задача 7. Створити функцію, яка випадковим чином виводить на екран одне із 4 зображень (шляхи до зображень
+        передаються у функцію).</h2>
+      <script>
+        function randomImage(randomNum) {
+          randomNum = 1 + Math.floor(Math.random() * 4)
+          switch (randomNum) {
+            case 1:
+              document.write(`<img src="/img/fruct_1.png" alt="">`);
+              break;
+            case 2:
+              document.write(`<img src="/img/fruct_2.png" alt="">`);
+              break;
+            case 3:
+              document.write(`<img src="/img/fruct_3.png" alt="">`);
+              break;
+            case 4:
+              document.write(`<img src="/img/fruct_4.png" alt="">`);
+              break;
+          }
+        }
+        randomImage()
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>
