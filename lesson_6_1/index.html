@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2> Задача 1. Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії
+        він відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є
+        хоча би одна трійка)).
+      </h2>
+      <script>
+        // 1) Вводемо кількість проедметів та кількість оцінок за кожний предмет
+        const schoolSubject = parseInt(prompt("Введіть кількість предметів"));
+        const subjectGrades = parseInt(prompt("Введіть кількість оцінок по одному предмету"));
+        // Створюємо масив з получених вище данних
+        let studentPerformance = []
+        for (let i = 0; i < schoolSubject; i++) {
+          studentPerformance.push([])
+          for (let q = 0; q < subjectGrades; q++) {
+            studentPerformance[i][q] = 1 + Math.floor(Math.random() * (5 + 1))
+          }
+        }
+        // 2) Створюєемо функцію яка обчислює середню оцінку по кожному предмету та виводить дані в новий масив
+        let mediumGrade = []
+        function medumeGrade(studentPerformance) {
+          let numSubject = 0
+          for (let i = 0; i < schoolSubject; i++) {
+            let medGr = 0
+            numSubject += 1
+            for (let q = 0; q < subjectGrades; q++) {
+              medGr += studentPerformance[i][q]
+            }
+            medGr = Math.round(medGr / subjectGrades)
+            mediumGrade.push(medGr)
+            document.write(`${numSubject}-й премет  середня оцінка ${medGr}<br>`);
+          }
+        }
+        medumeGrade(studentPerformance)
+        // 3) За допоиогою умовних опереторів з'ясовуємо яким учнєм є цей студент
+        let gradeTwo = mediumGrade.includes(2)
+        gradeThree = mediumGrade.includes(3)
+        if (gradeTwo === true) document.write(`учень двійочник`)
+        else if (gradeThree === true && gradeTwo != true) document.write(`учень трійочник`)
+        else document.write(`учень відміник`)
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>

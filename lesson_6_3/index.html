@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2> Задача 6. Дано послідовність цін товарів та назв (у окремих масивах). Вивести на екран ті, які може собі
+        дозволити користувач (кількість грошей задається).
+      </h2>
+      <script>
+        // 1) створюємо масив з введеним кількостью товарів та цінами на них
+        let numProducts = parseInt(prompt("введіть кількість товарів"));
+        priceProduct = parseInt(prompt("введіть кількість цін на товари"));
+        productsPrice = []
+        for (let i = 0; i < numProducts; i++) {
+          productsPrice.push([])
+          for (let q = 0; q < priceProduct; q++) {
+            productsPrice[i][q] = 10 + Math.floor(Math.random() * (50 - 10 + 1))
+          }
+        }
+        console.log(productsPrice);
+
+        // 2) знаходемо максемальну ціну на кожний окремий товар і порівнюемо з введенею кількостю грошей
+
+        function maxPrice(productsPrice) {
+          let amountMoney = parseInt(prompt("введіть кількість грошей"));
+          numProduct = []
+          for (let i = 0; i < productsPrice.length; i++) {
+            let maxPriceProduct = -Infinity
+            for (let q = 0; q < priceProduct; q++) {
+              if (productsPrice[i][q] > maxPriceProduct)
+                maxPriceProduct = productsPrice[i][q]
+            }
+            if (amountMoney > maxPriceProduct) {
+              numProduct.push(i + 1)
+            }
+          }
+        }
+        maxPrice(productsPrice)
+        document.write(`вам достатньо грошей на ${numProduct} групи товарів<br>`)
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>

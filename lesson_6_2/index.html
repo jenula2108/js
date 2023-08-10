@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2> Задача 2. Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+        <ul>
+          <li>номери днів, протягом яких кількість відвідувачів була меншою за 20;</li>
+          <li>номери днів, коли кількість відвідувачів була мінімальною;</li>
+          <li>номери днів, коли кількість відвідувачів була максимальною;</li>
+          <li>загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних</li>
+        </ul>
+      </h2>
+      <script>
+
+        // 1) Ствоюемо масив
+
+        let numberVisitors = []
+        for (let i = 0; i < 7; i++) {
+          numberVisitors[i] = 10 + Math.floor(Math.random() * (30 - 10 + 1))
+        }
+        console.log(numberVisitors);
+
+        // 2) Виводимо на екран номери днів, протягом яких кількість відвідувачів була меншою за 20;
+
+        let numDay = []
+        for (let i = 0; i < numberVisitors.length; i++) {
+          if (numberVisitors[i] < 20) {
+            numDay.push(i + 1)
+          }
+        }
+        document.write(`номера днів протягом яких кількість відвідувачів була меншою за 20: ${numDay}<br><br>`)
+
+        // 3)Виводимо на екран номери днів,коли кількість відвідувачів була мінімальною;
+
+        function calcMinNumDay(numberVisitors) {
+          let minDay = Infinity
+          numMinDay = []
+          for (let i = 0; i < numberVisitors.length; i++) {
+            if (numberVisitors[i] < minDay) minDay = numberVisitors[i]
+          }
+          console.log(minDay);
+          for (let i = 0; i < numberVisitors.length; i++) {
+            if (numberVisitors[i] === minDay) {
+              numMinDay.push(i + 1)
+            }
+          }
+          document.write(`день,коли кількість відвідувачів була мінімальною ${numMinDay}<br><br>`);
+        }
+        calcMinNumDay(numberVisitors)
+
+        // 4)Виводимо на екран номери днів,коли кількість відвідувачів була максимальною;
+
+        function calcMaxNumDay(numberVisitors) {
+          let maxDay = -Infinity
+          numMaxDay = []
+          for (let i = 0; i < numberVisitors.length; i++) {
+            if (numberVisitors[i] > maxDay) maxDay = numberVisitors[i]
+          }
+          console.log(maxDay);
+          for (let i = 0; i < numberVisitors.length; i++) {
+            if (numberVisitors[i] === maxDay) {
+              numMaxDay.push(i + 1)
+            }
+          }
+          document.write(`день,коли кількість відвідувачів була максимальною ${numMaxDay}<br><br>`);
+        }
+        calcMaxNumDay(numberVisitors)
+
+        //5) загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних
+
+        function calcWorkingDay(numberVisitors) {
+          let workingDay = 0
+          for (let i = 0; i < numberVisitors.length; i++) {
+            if (i <= 4) workingDay += numberVisitors[i]
+          }
+          return workingDay
+        }
+        let sumWorkDayVisit = calcWorkingDay(numberVisitors)
+        document.write(`кількість клієнтів у робочі дні ${sumWorkDayVisit}<br><br>`);
+        function calcDayOff(numberVisitors) {
+          let dayOff = 0
+          for (let i = 0; i < numberVisitors.length; i++) {
+            if (i > 4) dayOff += numberVisitors[i]
+          }
+          return dayOff
+        }
+        let sumDayOffVisit = calcDayOff(numberVisitors)
+        document.write(`кількість клієнтів у вихідні дні ${sumDayOffVisit}<br><br>`);
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>

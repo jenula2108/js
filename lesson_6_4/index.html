@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2> Задача 9. Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних
+        кораблів.
+        Комп’ютер довільно розміщує ці одиночні кораблі у масиві по один у клітинці
+        (якщо у клітинці 0, то клітинка пуста, якщо 1 – то це означає, що там є корабель.)
+        Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки не будуть потоплені усі
+        кораблі.
+      </h2>
+      <script>
+        // 1) Створюємо масив з допомогою введених даних(кількість клітинок одновимірного масиву та кількість одиночних кораблів)
+        let numFild = parseInt(prompt("кількість полів"));
+        numShips = parseInt(prompt("кількість кораблів"));
+        fild = []
+        let numShipPosition = 0
+        hit = 0
+        for (let i = 0; i < numFild; i++) {
+          fild[i] = 0
+        }
+        console.log(fild);
+        // 2) За допомогою оператору циклу довільно розміщюємо нащі кораблі по полю
+        do {
+          numShipPosition = 0
+          shipPosition = 0 + Math.floor(Math.random() * (numFild))
+          fild[shipPosition] = 1
+          for (let i = 0; i < fild.length; i++)
+            if (fild[i] === 1) numShipPosition++
+        }
+        while (numShipPosition < numShips)
+        console.log(fild);
+        console.log(numShipPosition);
+        // 3)Також за допомогою оператору циклу робимо можливість вводити номер поля і порівнювати цей номер поля з 1-ю чи 0-м. Таким ми чином з'ясовуємо попав користувач по кораблю чи ні
+        while (hit < numShips) {
+          let numFire = parseInt(prompt("введіть номер клітинки для враженя цілі"))
+          numFire--
+          if (fild[numFire] === 1) {
+            hit++
+            alert("ви вражили корабель")
+          }
+          else alert("ви не вражели корабель,спробуйте ще раз")
+        }
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>
