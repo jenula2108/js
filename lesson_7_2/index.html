@@ -22,10 +22,12 @@
         calc = 1
         mass.fill(0)
         mass.forEach((num, ind, mas) => { mas[ind] = -10 + Math.floor(Math.random() * (30 + 1)) })
+        document.write(`зміст мвсиву ${mass}<br>`);
+
         for (let num of mass) {
           if (num > 0) calc *= num
         }
-        document.write(calc);
+        document.write(`добуток дорівнює ${calc}`);
       </script>
     </main>
     <footer class="footer"></footer>
