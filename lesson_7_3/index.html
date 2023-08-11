@@ -22,11 +22,12 @@
         calcPic = []
         mass.fill(0)
         mass.forEach((num, ind, mas) => mas[ind] = 30 + Math.floor(Math.random() * (100 - 30 + 1)))
-        console.log(mass);
+        document.write(`масив цін ${mass}<br>`);
+
         for (const num of mass) {
           calcPic.push(Math.floor(num / 5))
         }
-        document.write(calcPic);
+        document.write(`податок від кожного значеня ціни в попередньому масиві ${calcPic}`);
       </script>
     </main>
     <footer class="footer"></footer>
