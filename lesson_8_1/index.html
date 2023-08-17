@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+      </h2>
+      <script>
+        //  Створюємо масив згідно умови задачі
+        let arr = new Array(20)
+        arr.fill(0)
+        arr.forEach((el, ind, arr) => arr[ind] = 1 + Math.floor(Math.random() * (10000 + 1)))
+        document.write(`створений масив згідно умові<br>${arr}<br><br>`);
+
+        // 1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.
+        let moreThanThousand = []
+        arr.forEach(el => el > 1000 ? moreThanThousand.push(el) : moreThanThousand)
+        document.write(`1)Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.<br>${moreThanThousand}<br><br>`);
+
+        // 2)Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.
+        let moreThanThousandInd = []
+        arr.forEach((el, ind) => el > 1000 ? moreThanThousandInd.push(ind + 1) : moreThanThousandInd)
+        document.write(`Сформувати новий масив, у якому є номери тільки тих, що більші за 1000 грн.<br>${moreThanThousandInd}<br><br>`);
+
+        // 3)Сформувати список з тих цін, які більші за попереднє значення
+        let arr2 = [...arr]
+        alimentMore = arr2.sort((el1, el2) => el1 - el2)
+        document.write(`Сформувати список з тих цін, які більші за попереднє значення<br>${alimentMore}<br><br>`);
+
+        // 4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального
+        let maxNum = arr.reduce((num, el, ind, arr) => el > num ? num = el : num, 1)
+        console.log(maxNum);
+        let maxPricePisent = arr.map((el) => Math.floor(el / maxNum * 100))
+        document.write(`Сформувати новий масив, що міститиме значення цін у відсотках стосовно максимального<br>${maxPricePisent}<br><br>`);
+
+        // 5)Підрахувати кількість змін цін
+
+        // 6)Визначити, чи є ціна, що менше 1000
+        findSomeNum = arr.some(el => el < 1000)
+        findSomeNum === true ? findSomeNum = "Так" : findSomeNum = "Ні"
+        document.write(`Визначити, чи є ціна, що менше 1000. Відповідь ${findSomeNum}<br><br>`);
+
+        // 7)Визначати, чи усі ціни більше за 1000
+        findAllNum = arr.every(el => el > 1000)
+        findAllNum === true ? findAllNum = "Так" : findAllNum = "Ні"
+        document.write(`Визначати, чи усі ціни більше за 1000 Відповідь ${findAllNum}<br><br>`);
+
+        // 8)Підрахувати кількість цін, що більше за 1000
+        calcIndexMore1000 = arr.reduce((num, el) => el > 1000 ? num + 1 : num, 0)
+        document.write(`Підрахувати кількість цін, що більше за 1000,відповідь${calcIndexMore1000}<br><br>`);
+
+        //9)Підрахувати суму цін, що більше за 1000
+        calcElimentMore1000 = arr.reduce((num, el) => el > 1000 ? num + el : num, 0)
+        document.write(`Підрахувати суму цін, що більше за 1000,відповідь${calcElimentMore1000}<br><br>`);
+
+        // 10)Знайти першу ціну, що більше за 1000
+        firstAlimentMore1000 = arr.find(el => el > 1000)
+        document.write(`Знайти першу ціну, що більше за 1000 відповідь ${firstAlimentMore1000}<br><br>`);
+
+        // 11)Знайти індекс першої ціни, що більше за 1000
+        firstIndexMore1000 = arr.findIndex(el => el > 1000)
+        document.write(`Знайти індекс першої ціни, що більше за 1000 відповідь ${firstIndexMore1000 + 1}<br><br>`);
+
+        // 12)Знайти останню ціну, що більше за 1000
+        lastAlimentMore1000 = arr.findLast(el => el > 1000)
+        document.write(`Знайти останню ціну, що більше за 1000 відповідь ${lastAlimentMore1000}<br><br>`);
+
+        // 13)Знайти індекс останньої ціни, що більше за 1000
+        lastIndexMore1000 = arr.findLastIndex(el => el > 1000)
+        document.write(`Знайти першу ціну, що більше за 1000 відповідь ${lastIndexMore1000 + 1}<br><br>`);
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>
