@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+      </h2>
+      <script>
+        // _____________________________Багатовимірні масиви_____________________________________
+        // функція для написаня дво вимірного масиву
+        function randomNum(minNum, maxNum) {
+          return ranNum = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+        }
+        function randomNumLenght(minLenght, maxLengt) {
+          return randomLenght = minLenght + Math.floor(Math.random() * (maxLengt - minLenght + 1))
+        }
+        function arrRow(numRow, minNum, maxNum) {
+          let arrRow = []
+          for (let i = 0; i < numRow; i++) {
+            let ranNum = randomNum(minNum, maxNum)
+            arrRow.push(ranNum)
+          }
+          return arrRow
+        }
+        function arrColumn(numColumn, numRow, minNum, maxNum) {
+          let arrColumn = []
+          for (let i = 0; i < numColumn; i++) {
+            let ranColumn = arrRow(numRow, minNum, maxNum)
+            arrColumn.push(ranColumn)
+          }
+          return arrColumn
+        }
+
+        // __________________________________________________
+        // ____________________________________________Багатовимірні масиви ДЗ_____________________________________________
+
+        // Задача 2. Дано інформацію про прибуток К магазинів протягом тижня. Знайти :
+        // 1) загальний прибуток кожного масиву за тиждень;
+        let profitStores = arrColumn(8, 7, 150, 500)
+        let weekProfitStores = profitStores.map((row) => row.reduce((sum, el) => sum + el))
+        document.write(` 1) загальний прибуток кожного масиву за тиждень;<br>`);
+
+        document.write(`${weekProfitStores}<br><br>`);
+        // 2) загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.)
+
+        let ollStoresDayProfit = []
+        const inArrLenght = profitStores.reduce((length, el) => length = el.length, 0)
+        for (let i = 0; i < inArrLenght; i++) {
+          let sum = 0
+          for (let q = 0; q < profitStores.length; q++) {
+            sum += profitStores[q][i]
+          }
+          ollStoresDayProfit.push(sum)
+        }
+        document.write(`2) загальний прибуток усіх магазинів по дням (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.)<br>`);
+
+        document.write(`${ollStoresDayProfit}<br><br>`);
+        // 3) загальний прибуток за робочі дні
+
+        let workingStoresDayProfit = []
+        for (let i = 0; i < inArrLenght - 2; i++) {
+          let sum = 0
+          for (let q = 0; q < profitStores.length; q++) {
+            sum += profitStores[q][i]
+          }
+          workingStoresDayProfit.push(sum)
+        }
+        document.write(`3) загальний прибуток за робочі дні<br>`);
+
+        document.write(`${workingStoresDayProfit}<br><br>`);
+
+        // 4) загальний прибуток за вихідні дні
+
+        let dayOffStoresProfit = []
+        for (let i = 0; i < inArrLenght; i++) {
+          if (i <= 4) continue
+          let sum = 0
+          for (let q = 0; q < profitStores.length; q++) {
+            sum += profitStores[q][i]
+          }
+          dayOffStoresProfit.push(sum)
+        }
+        document.write(`4) загальний прибуток за вихідні дні<br>`);
+
+        document.write(`${dayOffStoresProfit}<br><br>`);
+
+        // 5) максимальний прибуток за середу
+        let wednesdayMaxProfit = profitStores.reduce((num, el, ind, arr) => arr[ind][2] > num ? num = arr[ind][2] : num, 0)
+        document.write(`5) максимальний прибуток за середу<br>`);
+
+        document.write(`${wednesdayMaxProfit}<br><br>`);
+
+        // 6) сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200
+        let ollDayMore200 = profitStores.flat().filter((el) => el > 200)
+        document.write(`6) сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200<br>`);
+
+        document.write(`${ollDayMore200}<br><br>`)
+
+        // 7) відсортувати кожен тиждень за зростанням
+        // let moreWeekProfit = profitStores.map((row) => row.reduce((sum, el) => sum + el)).sort((row1, row2) => row1 - row2)
+        let moreWeekProfit = profitStores.sort((row1, row2) => {
+          let el1 = [...row1].reduce((sum, el) => sum + el),
+            el2 = [...row2].reduce((sum, el) => sum + el)
+          return el1 - el2
+        })
+        document.write(`7) відсортувати кожен тиждень за зростанням(Я так зрозумів задачу, що треба визнвчити прибутки прибутки кожного магазину за тиждень, за зростаням)<br>`);
+
+        document.write(`<ul>`);
+        for (let i = 0; i < moreWeekProfit.length; i++) {
+          document.write(`<li>`);
+          for (let q = 0; q < moreWeekProfit[i].length; q++) {
+            document.write(`${moreWeekProfit[i][q]},`);
+          }
+          document.write(`</li>`);
+        }
+        document.write(`</ui><br>`);
+        // 8) відсортувати тижні (рядки) за спаданням максимального елементи у цьому тижні (рядку), тобто при порівнянні рядків потрібно порівнювати максимальні елементи у кожному з цих рядків
+        let maxDayWeekProfit = profitStores.sort((row1, row2) => {
+          let el1 = Math.max(...row1),
+            el2 = Math.max(...row2)
+          return el2 - el1
+        })
+        document.write(`8) відсортувати тижні (рядки) за спаданням максимального елементи у цьому тижні (рядку), тобто при порівнянні рядків потрібно порівнювати максимальні елементи у кожному з цих рядків<br>`);
+
+        document.write(`<ul>`);
+        for (let i = 0; i < maxDayWeekProfit.length; i++) {
+          document.write(`<li>`);
+          for (let q = 0; q < maxDayWeekProfit[i].length; q++) {
+            document.write(`${maxDayWeekProfit[i][q]},`);
+          }
+          document.write(`</li>`);
+        }
+        document.write(`</ui><br>`);
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>
