@@ -109,11 +109,12 @@
 
         // 7) відсортувати кожен тиждень за зростанням
         // let moreWeekProfit = profitStores.map((row) => row.reduce((sum, el) => sum + el)).sort((row1, row2) => row1 - row2)
-        let moreWeekProfit = profitStores.sort((row1, row2) => {
+        let moreWeekProfit = [...profitStores].sort((row1, row2) => {
           let el1 = [...row1].reduce((sum, el) => sum + el),
             el2 = [...row2].reduce((sum, el) => sum + el)
           return el1 - el2
         })
+        console.log(moreWeekProfit);
         document.write(`7) відсортувати кожен тиждень за зростанням(Я так зрозумів задачу, що треба визнвчити прибутки прибутки кожного магазину за тиждень, за зростаням)<br>`);
 
         document.write(`<ul>`);
@@ -126,7 +127,7 @@
         }
         document.write(`</ui><br>`);
         // 8) відсортувати тижні (рядки) за спаданням максимального елементи у цьому тижні (рядку), тобто при порівнянні рядків потрібно порівнювати максимальні елементи у кожному з цих рядків
-        let maxDayWeekProfit = profitStores.sort((row1, row2) => {
+        let maxDayWeekProfit = [...profitStores].sort((row1, row2) => {
           let el1 = Math.max(...row1),
             el2 = Math.max(...row2)
           return el2 - el1
