@@ -69,7 +69,8 @@
         // 3) загальний прибуток за робочі дні
 
         let workingStoresDayProfit = []
-        for (let i = 0; i < inArrLenght - 2; i++) {
+        const inArrLenghtWorkDay = inArrLenght - 2
+        for (let i = 0; i < inArrLenghtWorkDay; i++) {
           let sum = 0
           for (let q = 0; q < profitStores.length; q++) {
             sum += profitStores[q][i]
@@ -114,7 +115,6 @@
             el2 = [...row2].reduce((sum, el) => sum + el)
           return el1 - el2
         })
-        console.log(moreWeekProfit);
         document.write(`7) відсортувати кожен тиждень за зростанням(Я так зрозумів задачу, що треба визнвчити прибутки прибутки кожного магазину за тиждень, за зростаням)<br>`);
 
         document.write(`<ul>`);
