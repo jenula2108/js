@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>Задача 6. Дано масив імен. Застосовуючи відповідне сортування та бінарний пошук визначити, чи є у масиві ім’я
+        довжиною 5 символів і під яким індексом.
+      </h2>
+      <script>
+        function shift(arr, i, q) {
+          let temp = arr[q]
+          arr[q] = arr[i]
+          arr[i] = temp
+        }
+        // ____________________________________________
+        const names = ["John", "Michael", "Sophia", "William", "Olivia", "James", "Ava"];
+        let replace
+        do {
+          replace = false
+          for (let i = 1; i < names.length; i++) {
+            if (names[i - 1].length > names[i].length) {
+              shift(names, i - 1, i)
+              replace = true
+            }
+          }
+        } while (replace);
+        console.log(names);
+        function searchName(arr, searchName) {
+          let start = 0,
+            end = names.length - 1
+          while (start <= end) {
+            midle = Math.floor((start + end) / 2)
+            if (names[midle].length === searchName) return midle;
+            if (names[midle].length < searchName) start = midle + 1
+            if (names[midle].length > searchName) end = midle - 1
+          }
+          return -1
+        }
+        let search = searchName(names, 5)
+        console.log(search);
+        search !== -1 ? document.write(`Ім’я довжиною 5 символів знаходиться під індексом ${midle}`) : document.write(`Такого імені тут немає`);
+
+
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>Задача 3. Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів під час сортування
+        включеннями.
+      </h2>
+      <script>
+        function shift(arr, i, q) {
+          let temp = arr[q]
+          arr[q] = arr[i]
+          arr[i] = temp
+        }
+        function createArr(arrLength, minNumAl, maxNumAl) {
+          let arr = new Array(arrLength).fill(0)
+          arr.forEach((al, ind, arr) => arr[ind] = minNumAl + Math.floor(Math.random() * (maxNumAl - minNumAl + 1)))
+          return arr
+        }
+        let arr = createArr(30, 2, 20)
+        // ______________________________________________________________________________
+        let testAl,
+          q,
+          replaceNum = 0
+        for (let i = 1; i < arr.length; i++) {
+          testAl = arr[i],
+            q = i - 1
+          while (q >= 0 && arr[q] > testAl) {
+            arr[q + 1] = arr[q]
+            q = q - 1
+            document.write(`${arr}<br>`);
+            replaceNum++
+          }
+          arr[q + 1] = testAl
+        }
+        document.write(`Кількість переходів ${replaceNum}`);
+
+
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>

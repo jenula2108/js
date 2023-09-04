@@ -1,0 +1,22 @@
+//REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+//EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+// $MaxWidth: 1900;
+@mixin adaptiv-font($pcSize, $mobSize){
+	$addSize: $pcSize - $mobSize;
+	$addMobSize: $addSize + $addSize * 0.7;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$MaxWidth}));
+	// @media (max-width: 767px) {
+	// 	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$MaxWidth}));
+	// }
+	// @media (min-width: 767px){
+	// 	font-size: calc(#{$mobSize +px} + #{$addSize} * (100vw / #{maxWIDTH}));
+	// }
+}
