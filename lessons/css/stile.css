@@ -264,5 +264,5 @@ main {
 
 body {
   background: rgb(2, 0, 36);
-  background: linear-gradient(196deg, rgb(2, 0, 36) 0%, rgb(12, 177, 230) 46%, rgb(245, 255, 0) 72%);
+  background: linear-gradient(196deg, rgb(2, 0, 36) 0%, rgb(12, 177, 230) 46%, rgb(245, 255, 0) 72%) fixed;
 }

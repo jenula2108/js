@@ -37,6 +37,9 @@ main {
   color: rgb(255, 255, 255);
   border-radius: 3px;
 }
+.wrap{
+
+}
 .link {
   display: block;
   text-align: center;
@@ -61,5 +64,5 @@ body {
     rgba(2, 0, 36, 1) 0%,
     rgba(12, 177, 230, 1) 46%,
     rgba(245, 255, 0, 1) 72%
-  );
+  ) fixed;
 }
