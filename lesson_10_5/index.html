@@ -40,7 +40,7 @@
           let start = 0,
             end = names.length - 1
           while (start <= end) {
-            midle = Math.floor((start + end) / 2)
+            let midle = Math.floor((start + end) / 2)
             if (names[midle].length === searchName) return midle;
             if (names[midle].length < searchName) start = midle + 1
             if (names[midle].length > searchName) end = midle - 1
@@ -49,7 +49,7 @@
         }
         let search = searchName(names, 5)
         console.log(search);
-        search !== -1 ? document.write(`Ім’я довжиною 5 символів знаходиться під індексом ${midle}`) : document.write(`Такого імені тут немає`);
+        search !== -1 ? document.write(`Ім’я довжиною 5 символів знаходиться під індексом ${search}`) : document.write(`Такого імені тут немає`);
 
 
       </script>

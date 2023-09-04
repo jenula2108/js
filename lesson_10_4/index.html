@@ -40,7 +40,7 @@
           let start = 0,
             end = names.length - 1
           while (start <= end) {
-            midle = Math.floor((start + end) / 2)
+            let midle = Math.floor((start + end) / 2)
             if (names[midle] === searchName) return midle;
             if (names[midle] < searchName) start = midle + 1
             if (names[midle] > searchName) end = midle - 1
@@ -48,7 +48,7 @@
           return -1
         }
         let search = searchName(names, "Olga")
-        search !== -1 ? document.write(`Ім'я Olga знаходеться під індексом ${midle}`) : document.write(`Такого імені в масиві немає`);
+        search !== -1 ? document.write(`Ім'я Olga знаходеться під індексом ${search}`) : document.write(`Такого імені в масиві немає`);
       </script>
     </main>
     <footer class="footer"></footer>
