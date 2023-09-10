@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+        Задача 4. З використанням замикань розробити ітератор, тобто функцію, що буде поступово за окремими викликами
+        видавати по одну букву наперед заданого слов
+        З використанням нього розробити гру «Прекладач». Виводимо для користувача опис цього слова і по одну букву
+        користувач вводить переклад цього слов
+        Підрахувати кількість вгаданих букв.
+
+      </h2>
+      <script>
+        function someWord(word) {
+          alert(`за ним люди їдять`)
+          function translation() {
+            let wordLenght = word.length - 1,
+              numRightLetters = 0,
+              numAttempts = 0,
+              ind = 0
+            do {
+              numAttempts++
+              let letter = prompt(`вкажіть буквую`).toLowerCase();
+              if (letter === word[ind]) {
+                alert(`ви вгадали букву`);
+                numRightLetters++
+              }
+              else alert(`ви не вгадали букву`);
+              ind++
+            } while (numAttempts <= wordLenght);
+            return numRightLetters
+          }
+          return translation()
+        }
+        let translationWord = someWord("table")
+        document.write(`Кфлькість вгаданих букв ${translationWord}`);
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>

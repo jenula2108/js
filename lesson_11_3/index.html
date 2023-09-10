@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+        Задача 5. Тренажер додавання. Кожні 10 секунд користувачу задають випадковий приклад з додавання двох цифр і
+        робиться перевірка.
+      </h2>
+      <script>
+        function getSamCalcNum(min, max, step = 0, numstep = 5) {
+          if (step === numstep) return
+          let num1 = min + Math.floor(Math.random() * (max - +1))
+          num2 = min + Math.floor(Math.random() * (max - min + 1))
+          calcSum = parseInt(prompt(`${num1} + ${num2} =`))
+          calcSum === num1 + num2 ? alert(`вірна відповідь`) : alert(`не вірна відповідь`)
+          return setTimeout(() => getSamCalcNum(1, 10, step + 1), 10000)
+        }
+        let result = setTimeout(() => getSamCalcNum(1, 10), 10000)
+      </script>
+    </main>
+    <footer class="footer"></footer>
+  </div>
+</body>
+
+</html>
