@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+
+      </h2>
+      <script>
+        class Tire {
+          constructor(fildCount, rabbitCount) {
+            this.fildCount = fildCount
+            this.rabbitCount = rabbitCount
+            this.tireFild = this.getTargetInFild()
+          }
+          randomTarget(fildLength) {
+            let target = Math.floor(Math.random() * fildLength)
+            return target
+          }
+          createFild(fildLength) {
+            let tireFild = []
+            tireFild.length = fildLength
+            tireFild.fill(0)
+            return tireFild
+          }
+          getTargetInFild() {
+            let fild = this.createFild(this.fildCount),
+              target = 0
+            while (target < this.rabbitCount) {
+              let targetIndex = this.randomTarget(this.fildCount)
+              if (fild[targetIndex] === 0) {
+                fild[targetIndex] = 1
+                target += 1
+              }
+            }
+            return fild
+          }
+          getFire(fild) {
+            while (confirm(`хочите спробувать ще раз?`)) {
+              let fire = parseInt(prompt(`введіть номер цілі від нуля до ${this.fildCount}`));
+              this.tireFild[fire] === 1 ? alert(`ви попали в ціль`) : alert(`ви не попали в ціль`)
+            }
+          }
+          toString() {
+            return `${this.tireFild}`
+          }
+        }
+        let tir1 = new Tire(10, 5)
+        console.log(tir1);
+        tir1.getFire()
+        document.write(`${tir1.toString()}`);
+      </script>
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </div>
+</body>
+
+</html>
+</script>
+</main>
+<footer class="footer"></footer>
+</div>
+</body>
+
+</html>

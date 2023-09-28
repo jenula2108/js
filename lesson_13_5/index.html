@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+
+      </h2>
+      <script>
+        class DancingHead {
+          constructor() {
+            this.boys = [
+              'Петро',
+              'Кирил',
+              'Василь',
+              'Євген',
+              'Андрій',
+            ]
+            this.gerls = [
+              'Олена',
+              'Вікторія',
+              'Марія',
+              'Катерина',
+              'Аня',
+            ]
+          }
+          getRandomPartner(arrLength) {
+            let ranIndx = Math.floor(Math.random() * arrLength)
+            return ranIndx
+          }
+          getPair() {
+            let pair = `${this.boys[this.getRandomPartner(this.boys.length)]} та ${this.gerls[this.getRandomPartner(this.gerls.length)]}`
+            return pair
+          }
+          toString() {
+            return `${this.getPair()}`
+          }
+          run() {
+            setInterval(() => {
+              document.write(`${this.toString()}<br>`);
+            }, 5000)
+          }
+        }
+        const danse1 = new DancingHead();
+        console.log(danse1);
+        console.log(danse1.getPair());
+        danse1.run()
+      </script>
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </div>
+</body>
+
+</html>
+</script>
+</main>
+<footer class="footer"></footer>
+</div>
+</body>
+
+</html>

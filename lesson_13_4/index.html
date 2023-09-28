@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+
+      </h2>
+      <script>
+        class object {
+          constructor() {
+            this.picture = [
+              {
+                kat: `<img src="img/ket_1.jfif" alt="">`,
+                link: `<a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fhappypik.ru%2Fwp-content%2Fuploads%2F2019%2F09%2Fnjashnye-kotiki8.jpg&tbnid=9rr5M4gJijwMvM&vet=12ahUKEwiXwaH1pMuBAxXAAxAIHSjmBDcQMygAegQIARBP..i&imgrefurl=https%3A%2F%2Fhappypik.ru%2Fcards%2Fkollekcii%2Fkartinki-zhivotnye%2Fnjashnye-kartinki-kotikov-kotiki-na-avu%2F&docid=HbrY2X5wCb2zrM&w=564&h=846&q=%D1%84%D0%BE%D1%82%D0%BE%20%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%BE%D0%B2&ved=2ahUKEwiXwaH1pMuBAxXAAxAIHSjmBDcQMygAegQIARBP" target="_blank">Посиланя на картинку</a>`
+              },
+              {
+                kat: `<img src="img/ket_2.jfif" alt="">`,
+                link: `<a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fw.forfun.com%2Ffetch%2F70%2F7047b702475924ba8f8044b5b5ca56ba.jpeg&tbnid=F1NwuMcZOiqb2M&vet=12ahUKEwiXwaH1pMuBAxXAAxAIHSjmBDcQMygBegQIARBR..i&imgrefurl=https%3A%2F%2Fru.wallpaper.mob.org%2Fgallery%2Ftag%3Doshki_oty_otiki%2F&docid=cefHKFvXZhaKDM&w=1600&h=1200&q=%D1%84%D0%BE%D1%82%D0%BE%20%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%BE%D0%B2&ved=2ahUKEwiXwaH1pMuBAxXAAxAIHSjmBDcQMygBegQIARBR" target="_blank">Посиланя на картинку</a>`
+              },
+              {
+                kat: `<img src="img/ket_3.jfif" alt="">`,
+                link: `<a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fstorage.theoryandpractice.ru%2Ftnp%2Fuploads%2Fimage_unit%2F000%2F156%2F586%2Fimage%2Fbase_87716f252d.jpg&tbnid=EM4zQz9Vji-T9M&vet=12ahUKEwiXwaH1pMuBAxXAAxAIHSjmBDcQMygCegQIARBT..i&imgrefurl=https%3A%2F%2Ftheoryandpractice.ru%2Fposts%2F17973-interesnye-fakty-o-kotikakh&docid=ahylCiSH3101zM&w=700&h=467&q=%D1%84%D0%BE%D1%82%D0%BE%20%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%BE%D0%B2&ved=2ahUKEwiXwaH1pMuBAxXAAxAIHSjmBDcQMygCegQIARBT" target="_blank">Посиланя на картинку</a>`
+              },
+              {
+                kat: `<img src="img/ket_4.jfif" alt="">`,
+                link: `<a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.5.ua%2Fmedia%2Fpictures%2Foriginal%2F225699.jpg%3Ft%3D1628082848&tbnid=CYphdGuvkkmQGM&vet=12ahUKEwiXwaH1pMuBAxXAAxAIHSjmBDcQMygDegQIARBV..i&imgrefurl=https%3A%2F%2Fwww.5.ua%2Fdv%2Fru%2Ffotogalereja%2F251256&docid=piKXD4WGa-7eRM&w=1200&h=1189&q=%D1%84%D0%BE%D1%82%D0%BE%20%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%BE%D0%B2&ved=2ahUKEwiXwaH1pMuBAxXAAxAIHSjmBDcQMygDegQIARBV" target="_blank">Посиланя на картинку</a>`
+              }
+            ]
+          }
+          getRandomIndex() {
+            let ranInd = Math.floor(Math.random() * this.picture.length)
+            return ranInd
+          }
+          toString() {
+            let ranindx = this.getRandomIndex()
+            return `${this.picture[ranindx].kat}<br> ${this.picture[ranindx].link}`;
+
+          }
+        }
+        const obj1 = new object();
+        console.log(obj1);
+        document.write(`${obj1.toString()}`);
+      </script>
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </div>
+</body>
+
+</html>
+</script>
+</main>
+<footer class="footer"></footer>
+</div>
+</body>
+
+</html>

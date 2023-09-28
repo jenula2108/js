@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+
+      </h2>
+      <script>
+        class MultChecker {
+          constructor(checkerNum) {
+            this.checkerNum = checkerNum,
+              this.numCorrectAnswer = 0,
+              this.numIncorrectAnswer = 0
+          }
+          gatRandomNum() {
+            let randomNum = 1 + Math.floor(Math.random() * 10)
+            return randomNum
+          }
+          getSum() {
+            let ranNum = this.gatRandomNum(),
+              sum = parseInt(prompt(`${ranNum}*${this.checkerNum}=`));
+            sum === ranNum * this.checkerNum ? this.numCorrectAnswer += 1 : this.numIncorrectAnswer += 1
+          }
+          checkeSum() {
+            while (confirm(`ще приклад?`)) {
+              this.getSum()
+            }
+            document.write(`${this.toString()}`);
+          }
+          toString() {
+            return `кількість правельних відповідей: ${this.numCorrectAnswer}<br> кількість неправельних відповідей: ${this.numIncorrectAnswer}`
+          }
+        }
+        const sum1 = new MultChecker(5);
+        sum1.checkeSum()
+        console.log(sum1);
+      </script>
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </div>
+</body>
+
+</html>
+</script>
+</main>
+<footer class="footer"></footer>
+</div>
+</body>
+
+</html>

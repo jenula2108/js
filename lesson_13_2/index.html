@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+
+      </h2>
+      <script>
+        class Car {
+          constructor(model, volumeOfTank, amountFuel, numberSeats, numberPassengers) {
+            this.model = model,
+              this.volumeOfTank = volumeOfTank,
+              this.amountFuel = amountFuel,
+              this.numberSeats = numberSeats,
+              this.numberPassengers = numberPassengers
+          }
+
+          refueling() {
+            let numLiters = parseInt(prompt(`введіть кількість литрів яку ви хочете заравити,але не більще ніж ${this.volumeOfTank - this.amountFuel}`));
+            if (numLiters <= this.volumeOfTank - this.amountFuel) {
+              this.amountFuel += numLiters
+            }
+            else {
+              alert(`пальне не вміщається в бак, спробуйте ще раз`)
+              this.refueling()
+            }
+          }
+          gatPassengers() {
+            let numPassengers = parseInt(prompt(`введіть кількість пасажирів яких ви хочете додати,але не більще ніж ${this.numberSeats - this.numberPassengers}`));
+            if (numPassengers <= this.numberSeats - this.numberPassengers) {
+              this.numberPassengers += numPassengers
+            }
+            else {
+              alert(`пасажири не вміщабться, спробуйте ще раз`)
+              this.gatPassengers()
+            }
+          }
+          outPassengers() {
+            let numPassengers = parseInt(prompt(`зараз в машині седять ${this.numberPassengers} пасажирів. Введіть кількість пасвжирів яких ви хочете висадити`));
+            this.numberPassengers -= numPassengers
+          }
+          toString() {
+            return `Марка ${this.model}<br>Розмір бака ${this.volumeOfTank}<br>Кількість наявних літрів ${this.amountFuel}<br>Кількість місць ${this.numberSeats}<br>Кількість пасажирів ${this.numberPassengers}`
+          }
+          runMetods() {
+            this.refueling()
+            this.gatPassengers()
+            this.outPassengers()
+            document.write(`${this.toString()}`);
+          }
+        }
+        const car1 = new Car('Volkswagen Transporter', 80, 20, 8, 3);
+        car1.runMetods()
+        console.log(car1);
+      </script>
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </div>
+</body>
+
+</html>
+</script>
+</main>
+<footer class="footer"></footer>
+</div>
+</body>
+
+</html>
