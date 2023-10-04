@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+
+      </h2>
+      <script>
+        // ____дата заснування (рік, місяць);
+        class DateCreation {
+          constructor(yearCreate, manthCreate) {
+            this.yearCreate = yearCreate,
+              this.manthCreate = manthCreate
+          }
+        }
+        const dataCreat = new DateCreation(2010, 5);
+        console.log(dataCreat);
+
+        // ______________________________________________
+        // послуги (назва послуги, вартість, термін виконання);
+        class Services {
+          constructor(nameService, price, timeWork) {
+            this.nameService = nameService,
+              this.price = price,
+              this.timeWork = timeWork
+          }
+        }
+        const services = [
+          new Services('діогностика', 300, 12),
+          new Services('ремонт', 1000, 48),
+          new Services('заміна запчастин', 500, 24),
+          new Services('чистка', 400, 18),
+        ];
+        // ___________________________________________________
+        // адреси філіалів (країна, місто, вулиця, номер будинку);
+        class AddressBranch {
+          constructor(country, city, street, houseNumber) {
+            this.country = country,
+              this.city = city,
+              this.street = street,
+              this.houseNumber = houseNumber
+          }
+        }
+        const addressBranch = [
+          new AddressBranch('Ukraine', 'Київ', 'в.Анни Ахматової', 24),
+          new AddressBranch('Ukraine', 'Вижгород', 'в.Незалежності', 12),
+          new AddressBranch('Ukraine', 'Київ', 'в.Ореста Левицкого', 13),
+          new AddressBranch('Ukraine', 'Одеса', 'в.велика Арнауцька', 1),
+          new AddressBranch('Ukraine', 'Миколаїв', 'в.Європейська', 14)
+        ];
+        // ______________________________________________________
+
+
+        class Firm {
+          constructor(firmName, dataCreat, services, addressBranch) {
+            this.firmName = firmName,
+              this.dataCreat = dataCreat,
+              this.services = services,
+              this.addressBranch = addressBranch
+          }
+          // визначення кількості років існування фірми;
+          getYearExistence() {
+            return 2023 - this.dataCreat.yearCreate
+          }
+          // виведення всіх філіалів фірми у вказаному місті;
+          getSomeCityBranch(someCity) {
+            let someCityBranch = this.addressBranch.filter((el) => el.city === someCity)
+            return someCityBranch
+          }
+          // послуги, що можуть бути виконані за вказану суму грошей та вказаний термін часу;
+          getSomeServices(priceService, timeWork) {
+            let someService = this.services.filter((el) => el.price <= priceService && el.timeWork <= timeWork)
+            return someService
+          }
+          // виведення на екран послуг
+          toString() {
+            document.write(`кількість років існування фірми ${this.getYearExistence()};<br>`);
+            document.write(`філія фірми у вказаному місті:<br>`);
+            for (const el of this.getSomeCityBranch('Київ')) {
+              let { city, street, houseNumber } = el
+              document.write(` місто: ${city}; ${street}, номер будинку:${houseNumber}<br>`);
+            }
+            document.write(`послуги які можуть бути виконані за вказану сумму грощей та вказаний час<br>`);
+            for (const el of this.getSomeServices(500, 18)) {
+              let { nameService, price, timeWork } = el
+              document.write(`послуга: ${nameService}, ціна за послугу: ${price}, термін виконаня: ${timeWork}<br> `);
+            }
+          }
+        }
+        const firm = new Firm('Apple', dataCreat, services, addressBranch);
+        console.log(firm);
+        console.log(firm.getSomeCityBranch('Київ'));
+        firm.toString()
+      </script>
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </div>
+</body>
+
+</html>
+</script>
+</main>
+<footer class="footer"></footer>
+</div>
+</body>
+
+</html>
