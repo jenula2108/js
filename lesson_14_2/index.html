@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+
+      </h2>
+      <script>
+        class TMoney {
+          #dolirCourse = 37
+          #cashInDollars = 0
+          constructor(cashInDollars) {
+
+            this.CashInDollars = cashInDollars
+          }
+          get DolirCourse() {
+            return this.#dolirCourse
+          }
+          get CashInDollars() {
+            return this.#cashInDollars
+          }
+          set CashInDollars(someCash) {
+            someCash = Math.floor(someCash / this.#dolirCourse)
+            if (someCash + this.#cashInDollars < 0) {
+              alert(`на вашому рахунку не вистачає коштів, спробуйте вказати іншу сумму`)
+              this.CashInDollars = parseInt(prompt(`на вашому рахунку ${tMoney1.CashInDollars} доларів.Як що ви хочете зняти кошти вкажіть суму з мінусом. Як що покласти то просто вкажіть сумму`));
+            }
+            else
+              return this.#cashInDollars += someCash
+          }
+        }
+        const tMoney1 = new TMoney(1500);
+        tMoney1.CashInDollars = parseInt(prompt(`на вашому рахунку ${tMoney1.CashInDollars} доларів.Як що ви хочете зняти кошти вкажіть суму з мінусом. Як що покласти то просто вкажіть сумму`));
+        console.log(tMoney1);
+      </script>
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </div>
+</body>
+
+</html>
+</script>
+</main>
+<footer class="footer"></footer>
+</div>
+</body>
+
+</html>
