@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- &display=swap -->
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/stile.css" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>js</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header"></header>
+    <main class="main__container">
+      <h2>
+
+      </h2>
+      <script>
+        class TDate {
+          numManthInYear = 12
+          numDayInManth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+          constructor(someDay = 4, someManth = 12, someYear = 2023) {
+            this.someDay = someDay,
+              this.someManth = someManth,
+              this.someYear = someYear
+          }
+          toString() {
+            return `число: ${this.someDay} місяц: ${this.someManth} рік: ${this.someYear}`
+          }
+          changeSomeYear(numChangeYear) {
+            this.someYear += numChangeYear
+            this.getLeapYear()
+          }
+          changeSomeManth(numChangeManth) {
+            numChangeManth ??= 1
+            this.someManth += numChangeManth
+            if (this.someManth > 12) {
+              this.someYear += Math.floor(this.someManth / 12)
+              this.getLeapYear()
+              this.someManth = this.someManth % 12
+            }
+          }
+          changeSomeDay(numChangeDay) {
+            let ind = this.someManth - 1
+            numChangeDay += this.someDay
+            do {
+              if (numChangeDay > this.numDayInManth[ind]) {
+                numChangeDay -= this.numDayInManth[ind]
+                ind += 1
+                this.changeSomeManth()
+                this.getLeapYear()
+              }
+              this.someDay = numChangeDay
+              if (ind > 11) ind = 0
+            } while (numChangeDay > this.numDayInManth[ind]);
+          }
+          getLeapYear() {
+            this.someYear % 4 === 0 ? this.numDayInManth[1] = 29 : this.numDayInManth[1] = 28
+          }
+        }
+        const someData1 = new TDate();
+        document.write(`${someData1}<br>`);
+        someData1.changeSomeDay(parseInt(prompt(`введіть кількість днів`)))
+        someData1.changeSomeManth(parseInt(prompt(`введіть кількість місяців`)))
+        someData1.changeSomeYear(parseInt(prompt(`введіть кількість років`)))
+        document.write(`${someData1}<br>`);
+        console.log(someData1);
+      </script>
+    </main>
+    <footer class="footer">
+
+    </footer>
+  </div>
+</body>
+
+</html>
+</script>
+</main>
+<footer class="footer"></footer>
+</div>
+</body>
+
+</html>
